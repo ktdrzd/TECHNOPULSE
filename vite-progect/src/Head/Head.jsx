@@ -52,7 +52,7 @@ const Head = () => {
             </div>
 
             <nav className={`${css.mobileNav} ${isMenuOpen ? css.open : ''}`}>
-                <p className={css.link} onClick={toggleMenu}>About</p>
+                <p className={css.link} onClick={toggleMenu}>About us</p>
                 <p className={css.link} onClick={toggleMenu}>Services</p>
                 <p className={css.link} onClick={toggleMenu}>Team</p>
                 <p className={css.link} onClick={toggleMenu}>Contact</p>

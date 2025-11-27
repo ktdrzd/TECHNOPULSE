@@ -12,6 +12,7 @@ const Header = () => {
                     <h1 className={css.companyNameTop}>VENENA MARKETING </h1>
                     <p className={css.companyNameBottom}>SERVICES - FZCO</p>
                 </div>
+                <p>London, United Kindom</p>
                 <p className={css.heroText}>{heroDescription}</p>
                 <button className={css.ctaButton}>Get Started</button>
             </div>

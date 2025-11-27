@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.block {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.block:hover {
+    background: #ececec;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.desc {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.subpoints {
+    margin-top: 12px;
+    padding-left: 20px;
+    animation: fade 0.3s ease;
+}
+
+.subpoints li {
+    margin-bottom: 6px;
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
