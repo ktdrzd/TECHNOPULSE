@@ -1,0 +1,91 @@
+.contactSection {
+    padding: 80px 20px;
+    background-color: #333; /* Темный фон для контраста с другими блоками */
+    color: white;
+}
+
+.heading {
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 50px;
+    /* Градиентный текст */
+    background: linear-gradient(90deg, #c74c96, #6c429c); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.contactContent {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap; /* Для адаптивности */
+}
+
+.infoBlock, .contactForm {
+    flex: 1 1 45%; /* Элементы занимают почти половину ширины */
+    min-width: 300px;
+    padding: 20px;
+}
+
+.infoTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #c74c96; /* Розовый акцент */
+}
+
+.contactDetail {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.contactDetail span {
+    font-weight: 600;
+    color: #f0f0f0;
+}
+
+.socialLinks {
+    margin-top: 30px;
+    /* Стили для иконок соцсетей */
+}
+
+/* --- Форма --- */
+.inputField, .textareaField {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #444;
+    color: white;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.inputField:focus, .textareaField:focus {
+    border-color: #6c429c; /* Фиолетовый фокус */
+    outline: none;
+}
+
+.submitButton {
+    width: 100%;
+    background: linear-gradient(90deg, #6c429c, #c74c96); 
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.submitButton:hover {
+    opacity: 0.9;
+}

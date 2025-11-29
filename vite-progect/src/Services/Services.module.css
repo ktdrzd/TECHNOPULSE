@@ -1,4 +1,4 @@
-.servicesWrapper {
+/* .servicesWrapper {
     padding: 40px 20px;
     background-color: #f9f9f9;
     text-align: center;
@@ -53,4 +53,118 @@
     color: #555;
     line-height: 1.4;
   }
-  
+   */
+
+   .servicesSection {
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.mainHeading {
+    font-size: 2.8rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #333;
+}
+
+/* --- Сетка компетенций --- */
+.competenciesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+}
+
+.competencyItem {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: box-shadow 0.3s, transform 0.3s;
+    text-align: center;
+}
+
+.competencyItem:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(108, 66, 156, 0.2);
+}
+
+.icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    line-height: 1;
+}
+
+.gridTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #6c429c; /* Фиолетовый акцент */
+    margin-bottom: 10px;
+}
+
+.competencyItem p {
+    color: #555;
+    font-size: 1rem;
+}
+
+/* --- Блок консалтинга (Выделенный) --- */
+.consultingBlock {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #1a0033; /* Темный фон хедера */
+    color: white;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.consultingHeading {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #c74c96; /* Розовый акцент */
+}
+
+.consultingText {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.consultingList {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.consultingList li {
+    font-size: 1rem;
+    padding: 5px 15px;
+    margin: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    color: #c74c96;
+}
+
+.consultingCta {
+    background-color: #c74c96;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.consultingCta:hover {
+    background-color: #6c429c;
+    transform: scale(1.05);
+}

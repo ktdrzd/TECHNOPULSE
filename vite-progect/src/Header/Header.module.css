@@ -1,12 +1,12 @@
-/* 1. Общие стили для фона (без изменений) */
+/* 1. Общие стили для фона и полноэкранного режима */
 .mainHeader {
-    /* ЗАМЕНИТЕ ЭТОТ ПУТЬ НА ПУТЬ К ВАШЕМУ ФОНОВОМУ ИЗОБРАЖЕНИЮ */
+    /* Фоновое изображение и затемнение */
     background-image: url('../assets/back.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.7); 
-    background-blend-mode: multiply; 
+    background-color: #1a0033; /* Очень темно-фиолетовый базовый цвет */
+    background-blend-mode: multiply; /* Затемнение изображения */
 
     color: white; 
     min-height: 100vh; 
@@ -16,13 +16,13 @@
     padding-bottom: 50px;
 }
 
-/* 2. Секция контента (без изменений) */
+/* 2. Секция контента (Центрирование) */
 .heroSection {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    justify-content: center; /* Центрирование по вертикали */
+    align-items: center; /* Центрирование по горизонтали */
     text-align: center;
     padding: 0 20px;
     max-width: 800px; 
@@ -30,28 +30,28 @@
     padding-top: 80px; 
 }
 
-/* 3. --- НОВЫЕ СТИЛИ ШРИФТОВ --- */
+/* 3. --- СТИЛИ ШРИФТОВ --- */
 
-/* Блок с названием компании (VENENA MARKETING, SERVICES - FZCO) */
+/* Блок с названием компании (Самый крупный) */
 .companyInfo {
     margin-bottom: 20px;
-    /* Убираем opacity, чтобы сделать название более ярким */
     opacity: 1; 
 }
 
 /* VENENA MARKETING (Самый крупный шрифт) */
 .companyNameTop {
     font-size: 2.8rem; /* ОЧЕНЬ БОЛЬШОЙ */
-    font-weight: 700; /* Жирный */
+    font-weight: 700; 
     letter-spacing: 5px; 
     margin: 0;
     text-transform: uppercase;
     line-height: 1.1;
+    color: #c74c96; /* Розовый акцент */
 }
 
 /* SERVICES - FZCO (Чуть меньше, чем VENENA MARKETING) */
 .companyNameBottom {
-    font-size: 1.5rem; /* Большой */
+    font-size: 1.5rem; 
     font-weight: 500;
     margin: 0;
     text-transform: uppercase;
@@ -59,35 +59,54 @@
 
 /* London, United Kindom (Чуть меньше названия компании) */
 .heroSection p:nth-of-type(1) { 
-    font-size: 1.3rem; /* Средний, меньше, чем companyNameBottom */
+    font-size: 1.3rem; /* Средний */
     margin-bottom: 30px;
     opacity: 0.8;
 }
 
-/* heroDescription (Описание) - Меньше в разы */
+/* heroDescription (Описание) - Самый мелкий */
 .heroText {
-    font-size: 1rem; /* Значительно меньше, как обычный текст */
-    font-weight: 400; /* Нормальный */
+    font-size: 1rem; /* Значительно меньше */
+    font-weight: 400; 
     line-height: 1.6;
     margin: 30px 0;
     max-width: 600px;
     opacity: 0.9;
 }
 
-/* 4. Кнопка "Get Started" (CTA) (без изменений, но можно увеличить отступ) */
+/* 4. Кнопка "Get Started" (CTA) */
 .ctaButton {
     background-color: transparent;
     color: white;
-    border: 2px solid white; 
+    /* Фиолетовая граница */
+    border: 2px solid #6c429c; 
     padding: 12px 30px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.4s ease;
     margin-top: 50px; 
 }
 
+/* Эффект при наведении */
 .ctaButton:hover {
-    background-color: white;
-    color: #1a0033;
+    /* Фон становится фиолетовым */
+    background-color: #6c429c; 
+    /* Граница становится розовой */
+    border-color: #c74c96;
+    box-shadow: 0 0 15px rgba(108, 66, 156, 0.6);
+}
+
+/* Добавьте медиа-запросы для адаптивности, если нужно */
+@media (max-width: 768px) {
+    .companyNameTop {
+        font-size: 2rem; 
+        letter-spacing: 3px;
+    }
+    .companyNameBottom {
+        font-size: 1.2rem;
+    }
+    .heroSection p:nth-of-type(1) { 
+        font-size: 1rem;
+    }
 }
