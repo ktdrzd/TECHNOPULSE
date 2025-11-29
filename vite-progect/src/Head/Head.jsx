@@ -1,53 +1,8 @@
-// import { useState } from 'react';
-// import css from "./Head.module.css";
-// import { LuBrainCircuit } from "react-icons/lu";
-// import { FiMenu, FiX } from "react-icons/fi";
-
-// const Head = () => {
-//     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-//     const toggleMenu = () => {
-//         setIsMenuOpen(!isMenuOpen);
-//     };
-
-//     return (
-//         <>
-//             <div className={css.contHead}>
-//                 <div className={css.brandSection}> 
-//                     <LuBrainCircuit className={css.iconHead}/>
-//                 </div>
-
-//                 <button 
-//                     className={css.menuButton} 
-//                     onClick={toggleMenu} 
-//                     aria-expanded={isMenuOpen}
-//                     aria-label={isMenuOpen ? "Закрыть меню" : "Открыть меню"}
-//                 >
-
-//                     {isMenuOpen ? (
-//                         <FiX className={css.menuIcon} />
-//                     ) : (
-//                         <FiMenu className={css.menuIcon} />
-//                     )}
-//                 </button>
-//             </div>
-
-//             <nav className={`${css.mobileNav} ${isMenuOpen ? css.open : ''}`}>
-//                 <p className={css.link} onClick={toggleMenu}>About us</p>
-//                 <p className={css.link} onClick={toggleMenu}>Services</p>
-//                 <p className={css.link} onClick={toggleMenu}>Team</p>
-//                 <p className={css.link} onClick={toggleMenu}>Contact</p>
-//             </nav>
-//         </>
-//     );
-// }
-
-// export default Head;
-
 import React, { useState } from 'react';
 import css from './Head.module.css';
 
 const Head = () => {
+    // Состояние для отслеживания, открыто ли бургер-меню
     const [isOpen, setIsOpen] = useState(false);
     
     const navItems = [
@@ -57,33 +12,46 @@ const Head = () => {
         { name: 'Contact', href: '#contact' },
     ];
 
+    // Функция-обработчик для закрытия меню при клике на ссылку
+    const handleLinkClick = () => {
+        setIsOpen(false);
+    };
+
     return (
         <header className={css.mainNav}>
             {/* Логотип */}
             <div className={css.logo}>
-                {/* Используем градиентный текст для стиля */}
                 VENENA
             </div>
 
             {/* Бургер-меню (только для мобильных) */}
-            <button className={css.menuToggle} onClick={() => setIsOpen(!isOpen)}>
+            {/* Добавляем класс .active для анимации крестика */}
+            <button 
+                className={`${css.menuToggle} ${isOpen ? css.active : ''}`} 
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                {/* Линии бургера */}
                 <span className={css.burgerLine}></span>
                 <span className={css.burgerLine}></span>
                 <span className={css.burgerLine}></span>
             </button>
 
             {/* Навигационное меню */}
+            {/* Добавляем класс .active для отображения меню на мобильных */}
             <nav className={`${css.navMenu} ${isOpen ? css.active : ''}`}>
                 <ul className={css.navList}>
                     {navItems.map(item => (
                         <li key={item.name} className={css.navItem}>
-                            <a href={item.href} onClick={() => setIsOpen(false)}>
+                            {/* При клике на ссылку меню закрывается */}
+                            <a href={item.href} onClick={handleLinkClick}>
                                 {item.name}
                             </a>
                         </li>
                     ))}
                 </ul>
-                <button className={css.ctaNavButton}>Get Started</button>
+                <button className={css.ctaNavButton} onClick={handleLinkClick}>
+                    Get Started
+                </button>
             </nav>
         </header>
     );

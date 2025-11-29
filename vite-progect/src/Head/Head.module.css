@@ -1,127 +1,68 @@
-/* .contHead {
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 60px; 
-  padding: 10px 40px; 
-  justify-content: space-between; 
-  align-items: center;
-  z-index: 1000;
-  background-color: #0a1f44;
-  color: #fff;
-  box-sizing: border-box;
-}
-
-.brandSection {
-  display: flex;
-  align-items: center;
-}
-
-.iconHead {
-  width: auto;
-  height: 30px;
-  font-size: 1.8em;
-}
-
-.menuButton {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  z-index: 1001;
-}
-
-.menuIcon {
-  font-size: 2em;
-  color: #fff; 
-  transition: color 0.3s;
-}
-
-.mobileNav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(10, 31, 68, 0.95);
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  transform: translateX(100%); 
-  transition: transform 0.4s ease-in-out;
-  z-index: 999; 
-  padding-top: 60px;
-}
-
-.mobileNav.open {
-  transform: translateX(0);
-}
-
-.mobileNav .link {
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
-  font-size: 2em;
-  cursor: pointer;
-  margin: 0;
-  padding: 10px 0;
-  transition: color 0.3s;
-} */
-
-
 .mainNav {
-  position: absolute; /* Позиционируем поверх Header.jsx */
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 200px; /* Сохраняем отступы по бокам */
   z-index: 100;
+  max-width: 800px; /* Устанавливаем ту же максимальную ширину */
+  margin: 0 auto; /* Центрируем блок */
+  box-sizing: border-box; /* Важно: учитывает padding в ширине */
 }
 
-/* Логотип (градиентный, как в примере Mertido) */
+/* Логотип */
 .logo {
-  font-size: 1.5rem;
+  font-size: 40px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  
-  /* Градиентный текст: ФИОЛЕТОВЫЙ -> РОЗОВЫЙ */
-  background: linear-gradient(90deg, #c74c96, #6c429c); 
+  background: linear-gradient(90deg, #c74c96, #6c429c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
 
-/* Кнопка переключения меню (для мобильных) */
+/* Кнопка переключения меню */
 .menuToggle {
   display: none; /* Скрыть на десктопе */
   background: none;
   border: none;
   cursor: pointer;
   padding: 10px;
+  z-index: 101; /* Поверх меню */
 }
 
 .burgerLine {
   display: block;
-  width: 25px;
-  height: 3px;
+  width: 40px;
+  height: 6px;
   background-color: white;
   margin: 5px 0;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-/* Меню навигации */
+/* Анимация крестика */
+.menuToggle.active .burgerLine:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menuToggle.active .burgerLine:nth-child(2) {
+  opacity: 0; /* Скрываем среднюю линию */
+}
+
+.menuToggle.active .burgerLine:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Меню навигации (Базовые стили) */
 .navMenu {
   display: flex;
   align-items: center;
+  transition: transform 0.3s ease-in-out;
 }
 
 .navList {
@@ -162,48 +103,60 @@
   color: #6c429c;
 }
 
-/* Медиа-запросы для адаптивности */
+/* --- 📱 Медиазапрос для мобильных устройств (Бургер-меню) --- */
 @media (max-width: 768px) {
+  .mainNav {
+    padding: 15px 25px; /* Уменьшаем отступы на мобильных */
+  }
+
+  /* Показываем кнопку бургера */
   .menuToggle {
-      display: block;
+    display: block;
   }
 
+  /* Навигационное меню (мобильная версия) */
   .navMenu {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 70%;
-      max-width: 300px;
-      height: 100%;
-      background-color: #1a0033; /* Темный фон хедера */
-      flex-direction: column;
-      justify-content: center;
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in-out;
+    /* Фиксируем меню на весь экран и смещаем его влево */
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%; /* Ширина меню (можно настроить) */
+    height: 100vh;
+    background-color: #1e1e1e; /* Темный фон для меню */
+    flex-direction: column; /* Элементы вертикально */
+    justify-content: flex-start; /* Начинаем сверху */
+    padding: 100px 30px 30px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    /* Скрываем меню, смещая его за край экрана */
+    transform: translateX(100%);
+    z-index: 99;
   }
 
+  /* Класс для отображения меню */
   .navMenu.active {
-      transform: translateX(0);
+    transform: translateX(0); /* Сдвигаем обратно на экран */
   }
 
   .navList {
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
+    flex-direction: column; /* Пункты меню вертикально */
+    width: 100%;
   }
 
   .navItem {
-      margin: 20px 0;
+    margin: 15px 0;
+    text-align: center;
   }
 
   .navItem a {
-      font-size: 1.2rem;
-      margin-left: 0;
+    margin: 0; /* Убираем горизонтальный отступ */
+    padding: 10px 0;
+    display: block; /* Занимает всю ширину */
+    font-size: 1.2rem;
   }
 
   .ctaNavButton {
-      margin-top: 30px;
-      margin-left: 0;
+    margin: 20px 0 0 0; /* Отступ сверху */
+    width: 100%; /* Полная ширина кнопки */
+    text-align: center;
   }
 }
-
