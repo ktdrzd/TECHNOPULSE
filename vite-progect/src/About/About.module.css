@@ -1,18 +1,52 @@
-/* --- ГЛАВНЫЙ ЗАГОЛОВОК "About Us" --- */
+/* --- ГЛОБАЛЬНЫЕ СТИЛИ ДЛЯ ШАПКИ (Если они в этом же файле) --- */
+
+.mainHeader {
+    background-image: url('../assets/back.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #0d001a; 
+    background-blend-mode: multiply;
+    color: white; 
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+    padding-bottom: 50px;
+    font-family: 'Roboto Slab', serif;
+}
+
+.mainNav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px; 
+    z-index: 100;
+    max-width: 800px; 
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* ... (Остальные стили навигации, логотипа, heroSection, ctaButton) ... */
+
+/* --- СТИЛИ НАЧАЛА СЕКЦИИ "ABOUT US" --- */
 
 .mainWrapper {
     padding: 80px 20px;
     background-color: #f0f0f0;
+    font-family: 'Roboto Slab', serif;
 }
 
 .header {
-    font-size: 3.5rem;
+    font-size: 110px;
     font-weight: 800;
     text-align: center;
     margin-bottom: 50px;
     text-transform: uppercase;
-    
-    /* Градиентный текст: ФИОЛЕТОВЫЙ -> РОЗОВЫЙ */
     background: linear-gradient(90deg, #6c429c, #c74c96); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -35,18 +69,54 @@
 
 .block {
     background: white; 
-    border: 1px solid #e0e0e0;
     padding: 20px 25px;
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.4s ease; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    
+    /* Стили для анимации бордера */
+    position: relative; 
+    z-index: 1; 
+    overflow: hidden; 
 }
+
+/* ПСЕВДОЭЛЕМЕНТ 1: ЗМЕЙКА (ГРАДИЕНТ, КОТОРЫЙ ВРАЩАЕТСЯ) */
+.block::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        60deg,
+        #6c429c, /* Фиолетовый */
+        #c74c96, /* Розовый */
+        #6c429c /* Фиолетовый (для повтора) */
+    );
+    z-index: -1; 
+    animation: borderSnake 4s linear infinite; 
+}
+
+/* ПСЕВДОЭЛЕМЕНТ 2: БЕЛОЕ ПЕРЕКРЫТИЕ (СОЗДАЕТ ЭФФЕКТ ТОНКОГО БОРДЕРА) */
+.block::after {
+    content: "";
+    position: absolute;
+    top: 2px; 
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: white; /* Цвет фона блока */
+    border-radius: 10px; 
+    z-index: 0; 
+}
+
 
 /* Анимация при наведении */
 .block:hover {
-    border-color: #6c429c; 
-    box-shadow: 0 6px 15px rgba(108, 66, 156, 0.2); 
+    box-shadow: 0 6px 15px rgba(108, 66, 156, 0.2), 
+        0 0 15px rgba(199, 76, 150, 0.8);
     transform: translateY(-3px); 
 }
 
@@ -55,18 +125,47 @@
     background: #f8f6fb; 
 }
 
+
+/* --- ЛОГИКА СКРЫТИЯ/ОТОБРАЖЕНИЯ КОНТЕНТА --- */
+
+/* Скрываем контент по умолчанию */
+.desc,
+.subpoints {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    /* Плавность для анимации раскрытия */
+    transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, margin-top 0.4s ease-in-out; 
+}
+
+/* При активации блока (через JS добавляется класс .active) - показываем контент */
+.block.active .desc,
+.block.active .subpoints {
+    max-height: 1000px; /* Достаточно большое значение для контента */
+    opacity: 1;
+}
+
+/* Корректировка отступа для видимого контента */
+.block.active .desc {
+    margin-top: 10px; 
+}
+
+/* --- СТИЛИ ВНУТРЕННЕГО ТЕКСТА И Z-INDEX --- */
+
 .title {
-    font-size: 1.4rem; 
+    font-size: 70px; 
     font-weight: 700;
     margin-bottom: 0; 
     color: #333; 
+    position: relative; z-index: 2; 
 }
 
 .desc {
-    font-size: 1rem;
+    font-size: 50px;
     line-height: 1.6;
-    margin-top: 10px;
+    /* margin-top: 10px; - Управляется классом .block.active .desc */
     color: #555; 
+    position: relative; z-index: 2; 
 }
 
 /* --- СТИЛИ РАЗВОРАЧИВАЮЩЕГОСЯ СПИСКА --- */
@@ -78,12 +177,16 @@
     border-top: 1px solid #e0e0e0;
     padding-top: 15px;
     
-    /* Анимация плавного появления */
+    position: relative; z-index: 2; 
+}
+
+/* Анимация плавного появления (только для opacity/transform) */
+.block.active .subpoints {
     animation: fadeInSlide 0.4s ease-out;
 }
 
 .subpoints li {
-    font-size: 0.95rem;
+    font-size: 50px;
     color: #444;
     margin-bottom: 8px;
     position: relative;
@@ -93,14 +196,20 @@
 /* Кастомный маркер для списка */
 .subpoints li::before {
     content: "•"; 
-    color: #c74c96; /* Розовый акцент */
+    color: #c74c96; 
     font-weight: bold;
     display: inline-block;
     width: 1em;
     margin-left: -1em;
 }
 
-/* --- АНИМАЦИИ --- */
+/* --- КЛЮЧЕВЫЕ КАДРЫ --- */
+
+@keyframes borderSnake {
+    to {
+        transform: rotate(360deg); 
+    }
+}
 
 @keyframes fadeInSlide {
     from { 

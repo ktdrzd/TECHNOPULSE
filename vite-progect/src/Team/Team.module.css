@@ -1,26 +1,33 @@
 .teamSection {
     padding: 80px 20px;
     background-color: white;
+    font-family: 'Roboto Slab', serif;
 }
 
 .heading {
-    font-size: 2.8rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 10px;
-    color: #333;
+    font-size: 110px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #6c429c, #c74c96); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .subText {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 50px;
     color: #666;
     margin-bottom: 50px;
 }
 
 .teamGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    flex-direction: column;
+    /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
     gap: 30px;
     max-width: 1000px;
     margin: 0 auto;

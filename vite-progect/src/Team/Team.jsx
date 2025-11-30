@@ -71,7 +71,7 @@ const teamMembers = [
 const Team = () => {
     return (
         <section id="team" className={css.teamSection}>
-            <h2 className={css.heading}>Our Leadership Team</h2>
+            <h2 className={css.heading}>Our Team</h2>
             <p className={css.subText}>A cross-functional group of experts dedicated to your success.</p>
             
             <div className={css.teamGrid}>

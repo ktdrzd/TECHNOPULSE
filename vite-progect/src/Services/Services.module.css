@@ -1,76 +1,25 @@
-/* .servicesWrapper {
-    padding: 40px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: #222;
-  }
-  
-  .cardsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    justify-items: center;
-  }
-  
-  .card {
-    background-color: #fff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    padding: 20px;
-    width: 100%;
-    max-width: 300px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
-  
-  .cardTitle {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    color: #111;
-  }
-  
-  .cardList {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
-  }
-  
-  .cardList li {
-    margin-bottom: 10px;
-    font-size: 0.95rem;
-    color: #555;
-    line-height: 1.4;
-  }
-   */
-
    .servicesSection {
     padding: 80px 20px;
     background-color: #f9f9f9;
+    font-family: 'Roboto Slab', serif;
 }
 
 .mainHeading {
-    font-size: 2.8rem;
-    font-weight: 800;
-    text-align: center;
-    margin-bottom: 60px;
-    color: #333;
+  font-size: 110px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #6c429c, #c74c96); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 /* --- Сетка компетенций --- */
 .competenciesGrid {
-    display: grid;
+    /* display: grid; */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
@@ -92,13 +41,14 @@
 }
 
 .icon {
-    font-size: 3rem;
+    font-size: 90px;
     margin-bottom: 15px;
     line-height: 1;
+    color: #6c429c;
 }
 
 .gridTitle {
-    font-size: 1.4rem;
+    font-size: 70px;
     font-weight: 700;
     color: #6c429c; /* Фиолетовый акцент */
     margin-bottom: 10px;
@@ -106,7 +56,7 @@
 
 .competencyItem p {
     color: #555;
-    font-size: 1rem;
+    font-size: 45px;
 }
 
 /* --- Блок консалтинга (Выделенный) --- */
@@ -121,14 +71,14 @@
 }
 
 .consultingHeading {
-    font-size: 2.5rem;
+    font-size: 70px;
     font-weight: 800;
     margin-bottom: 20px;
     color: #c74c96; /* Розовый акцент */
 }
 
 .consultingText {
-    font-size: 1.1rem;
+    font-size: 45px;
     margin-bottom: 30px;
     line-height: 1.6;
 }
@@ -144,15 +94,15 @@
 }
 
 .consultingList li {
-    font-size: 1rem;
-    padding: 5px 15px;
+    font-size: 40px;
+    padding: 5px 20px;
     margin: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
     color: #c74c96;
 }
 
-.consultingCta {
+/* .consultingCta {
     background-color: #c74c96;
     color: white;
     border: none;
@@ -167,4 +117,4 @@
 .consultingCta:hover {
     background-color: #6c429c;
     transform: scale(1.05);
-}
+} */
