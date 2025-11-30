@@ -1,25 +1,14 @@
-/* ================================================= */
-/* ОСНОВНЫЕ СТИЛИ (ПО УМОЛЧАНИЮ)         */
-/* ================================================= */
-
 .mainHeader {
-    /* Фон и фоновое изображение */
     background-image: url('../assets/back.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #1a0033;
     background-blend-mode: multiply; 
-    
     color: white; 
     font-family: 'Roboto Slab', serif;
-    
     min-height: 100vh; 
-    
-    /* 🔥 КРИТИЧЕСКИЕ ИЗМЕНЕНИЯ: Растягиваем на всю ширину и предотвращаем горизонтальный скролл */
-    width: 100%; /* Вместо 100vw, чтобы избежать проблем с горизонтальным скроллом */
-    overflow-x: hidden; /* Добавлено для устранения горизонтального сдвига */
-    
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     padding-bottom: 50px;
@@ -31,31 +20,23 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    text-align: center; 
-    
+    text-align: center;
     padding-left: 30px;
     padding-right: 30px;
-    
-    /* ❌ ИСПРАВЛЕНО: Устанавливаем максимальную ширину для центрирования контента по умолчанию */
-    max-width: 800px; 
-    width: 100%; /* Убедимся, что занимает 100% доступной ширины (до 800px) */
+    max-width: 800px;
     margin: 0 auto; 
     padding-top: 80px; 
 }
 
-/* Контейнеры для адаптации на больших экранах (по умолчанию занимают 100%) */
 .heroContentWrapper {
     width: 100%; 
 }
 
 .animationContainer {
-    display: none; /* Скрываем анимацию на маленьких экранах */
-    /* Добавляем flex для центрирования логотипа/анимации, когда он появится */
+    display: none;
     justify-content: center;
     align-items: center;
 }
-
-/* --- Стилизация текста --- */
 
 .companyInfo {
     margin-bottom: 20px;
@@ -114,10 +95,14 @@
     box-shadow: 0 0 15px rgba(108, 66, 156, 0.6);
 }
 
-/* ================================================= */
-/* --- 📱 Медиазапрос для МОБИЛЬНЫХ (Max-width: 768px) --- */
-/* ================================================= */
 @media (min-width: 768px) {
+.heroSection {
+    width: 100%;
+}
+.mainHeader{
+    width: 100%;
+}
+
     .companyNameTop {
       font-size: 50px; 
       letter-spacing: 3px;
@@ -143,79 +128,68 @@
     }
  }
 
-/* ================================================= */
-/* 🔥 Адаптация для БОЛЬШИХ экранов (Min-width: 992px) 🔥 */
-/* ================================================= */
 @media (min-width: 992px) {
-
-
-    /* 1. Изменение компоновки для размещения текста и анимации рядом */
     .heroSection {
-        /* ❌ Убираем ненужные margin и width: 100% уже есть, а max-width нужно увеличить */
-        align-items: center; 
-        text-align: left; 
-        max-width: 1200px; /* Увеличиваем контейнер */
-        margin: 0 auto; /* Перецентрируем */
-        
-        flex-direction: row; /* Горизонтальное размещение */
-        justify-content: space-between; 
-        padding-left: 50px;
-        padding-right: 50px;
-    }
-
-    /* 2. Контейнер с текстовым контентом (слева) */
-    .heroContentWrapper {
-        width: 50%; 
-        margin-right: 50px; 
+    align-items: center; 
+     text-align: left; 
+     max-width: 1200px;
+    margin: 0 auto;
+   flex-direction: row; 
+    justify-content: space-between; 
+    padding-left: 50px;
+    padding-right: 50px;
     }
     
-    /* 3. Контейнер для анимации (справа) */
-    .animationContainer {
-        display: flex; /* 🔥 Используем flex для центрирования логотипа/анимации */
-        width: 40%; 
-        min-height: 500px;
-        
-        /* Стили для рамки/карточки */
-        border-radius: 20px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    .heroContentWrapper {
+    width: 50%; 
+     margin-right: 50px; 
     }
-
-    /* 4. Анимация применяется к дочернему элементу, если он есть (например, .animatedLogo) */
-    /* Если анимация должна быть на контейнере, оставьте как есть, но это не рекомендуется */
+    
+    .animationContainer {
+    display: flex;
+    width: 45%;
+    min-height: 600px;
+    border-radius: 0;
+     box-shadow: none;
+    }
+    
     .animationContainer,
     .animatedLogo {
-         animation: scaleAnimation 4s infinite alternate ease-in-out;
+    animation: pulseRotate 6s infinite ease-in-out alternate; /* Новая, более интересная анимация */
     }
     
-    /* Увеличенные шрифты для больших экранов */
     .companyNameTop {
-        font-size: 90px;
-        letter-spacing: 7px;
+    font-size: 90px;
+    letter-spacing: 7px;
     }
-
+    
     .companyNameBottom {
-        font-size: 80px;
+    font-size: 80px;
     }
     
     .heroLocation,
     .heroText,
     .ctaButton {
-        font-size: 22px; 
+    font-size: 22px; 
     }
     
     .ctaButton {
-        padding: 15px 40px;
+     padding: 15px 40px;
     }
-}
-
-/* 5. Определение ключевых кадров для анимации */
-@keyframes scaleAnimation {
+    }
+    
+    @keyframes pulseRotate {
     0% {
-        transform: scale(0.95); 
-        opacity: 0.8;
+    transform: scale(0.9) rotate(0deg); 
+    opacity: 0.7;
+    }
+     50% {
+    transform: scale(1.1) rotate(10deg); 
+    opacity: 1;
     }
     100% {
-        transform: scale(1.05); 
-        opacity: 1;
+    transform: scale(0.9) rotate(0deg); 
+    opacity: 0.7;
     }
-}
+    }
+

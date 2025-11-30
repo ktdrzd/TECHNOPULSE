@@ -1,12 +1,9 @@
-// src/components/Team/Team.js
-
-import React, { useState, useEffect, useRef } from 'react'; // <--- ДОДАНО ХУКИ
+import React, { useState, useEffect, useRef } from 'react';
 import css from './Team.module.css';
 import CEO from '../assets/CEO.jpg';
 import YULIA from '../assets/YULIA.jpg';
 import ANDRII from '../assets/ANDRII.jpg';
 
-// 1. ДАНІ ЗАЛИШАЮТЬСЯ БЕЗ ЗМІН
 const teamMembers = [
     {
         id: 1,

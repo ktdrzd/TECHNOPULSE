@@ -1,4 +1,3 @@
-/* Общие стили (Применяются и для десктопа/планшета) */
 .mainNav {
   top: 0;
   left: 0;
@@ -13,7 +12,6 @@
   box-sizing: border-box;
 }
 
-/* Логотип */
 .logo {
   font-size: 40px;
   font-weight: 700;
@@ -26,7 +24,6 @@
   color: transparent;
 }
 
-/* Кнопка переключения меню */
 .menuToggle {
   display: none;
   background: none;
@@ -46,7 +43,6 @@
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Анимация крестика (Две линии) */
 .menuToggle.active .burgerLine:nth-child(1) {
   transform: translateY(11px) rotate(45deg);
 }
@@ -54,7 +50,6 @@
   transform: translateY(-11px) rotate(-45deg);
 }
 
-/* Оверлей (Скрыт по умолчанию) */
 .overlay {
   position: fixed;
   top: 0;
@@ -73,7 +68,6 @@
   visibility: visible;
 }
 
-/* Навигационное меню (Горизонтальный вид по умолчанию) */
 .navMenu {
   display: flex;
   align-items: center;
@@ -133,7 +127,6 @@
   box-shadow: 0 4px 15px rgba(108, 66, 156, 0.6);
 }
 
-/* --- 📱 Медиазапрос для МОБИЛЬНЫХ устройств (Max-width: 768px) --- */
 @media (max-width: 768px) {
   .mainNav {
     padding: 15px 25px;
@@ -185,7 +178,6 @@
     position: relative; 
   }
 
-  /* Стили для полосочек под надписями в мобильном меню */
   .navItem a::after {
     content: '';
     position: absolute;
@@ -198,7 +190,6 @@
     transition: all 0.2s ease-out; 
   }
 
-  /* Скрываем полоску и сохраняем цвет текста при взаимодействии */
   .navItem a:hover::after,
   .navItem a:active::after,
   .navItem a:focus::after {
@@ -220,10 +211,8 @@
   }
 }
 
-/* --- 💻 Медиазапрос для ПЛАНШЕТОВ и ДЕСКТОПОВ (Min-width: 769px) --- */
-@media (min-width: 768px) { /* 🔥 Скорректировано на 769px для ясности */
+@media (min-width: 768px) { 
     
-    /* 🔥 СДЕЛАНО: МЕНЮ ФИКСИРОВАННОЕ И ПОЛНОШИРИННОЕ 🔥 */
     .mainNav {
         position: fixed;
         top: 0;
@@ -232,14 +221,9 @@
         max-width: none; 
         margin: 0;      
         background-color: #1e1e1e;
-        padding: 10px 50px; /* Уменьшаем боковые отступы, чтобы уместиться на маленьком планшете */
+        padding: 10px 50px;
     }
 
-    /* Дополнительный блок для центрирования контента внутри .mainNav (если нужно) */
-    /* Вы можете обернуть содержимое .mainNav в дополнительный div и центрировать его */
-    /* Или просто оставить отступы 20px 200px, если вам не нужна полноширинная полоса */
-
-    /* Скрываем бургер и оверлей */
     .menuToggle {
         display: none !important;
     }
@@ -247,7 +231,6 @@
         display: none !important;
     }
 
-    /* Убеждаемся, что навигация отображается как горизонтальная строка */
     .navMenu {
         display: flex !important;
         position: static !important;
@@ -271,11 +254,9 @@
     .navItem a {
         font-size: 20px;
         font-weight: 500;
-        /* Убеждаемся, что горизонтальный отступ возвращается для десктопа */
         margin-left: 30px; 
     }
-    
-    /* Восстанавливаем десктопный эффект полоски при наведении */
+
     .navItem a::after {
         content: '';
         position: absolute;

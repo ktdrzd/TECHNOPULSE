@@ -1,35 +1,25 @@
 .modalOverlay {
-    /* Фиксированное положение на весь экран */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    /* Полупрозрачный фон */
     background-color: rgba(0, 0, 0, 0.7);
-    /* Центрирование контента */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Поверх всего */
-    z-index: 1000; 
-    /* Позволяет прокручивать, если содержимое не помещается */
+    z-index: 1000;
     overflow-y: auto; 
     padding: 20px;
 }
 
 .modalContent {
-    /* СЕРЫЙ ФОН ВМЕСТО БЕЛОГО/ТЕМНОГО */
-    background-color: #E0E0E0; 
-    /* Цвет текста по умолчанию меняем на темный для читаемости */
+    background-color: #E0E0E0;
     color: #333;
-    
     padding: 30px;
     border-radius: 10px;
-    /* Максимальная ширина, чтобы текст не был слишком широким */
     max-width: 800px; 
     width: 90%;
-    /* Добавляем прокрутку для самого контента, если он очень длинный */
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
@@ -37,7 +27,6 @@
 }
 
 .modalContent h1, .modalContent h2, .modalContent h3 {
-    /* Градиент остался, но на светлом фоне он будет выглядеть немного иначе */
     background: linear-gradient(90deg, #c74c96, #6c429c); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -58,14 +47,12 @@
 }
 
 .modalContent th, .modalContent td {
-    /* Границы таблицы теперь темнее для контраста */
     border: 1px solid #aaa; 
     padding: 8px;
     text-align: left;
 }
 
 .modalContent th {
-    /* Фон заголовков таблицы делаем чуть темнее серого */
     background-color: #ccc; 
 }
 
@@ -77,7 +64,6 @@
     border: none;
     font-size: 24px;
     cursor: pointer;
-    /* Цвет кнопки закрытия меняем на темный */
     color: #fff; 
     line-height: 1;
     padding: 5px 10px;

@@ -7,8 +7,7 @@ import { GiProgression } from "react-icons/gi";
 const Services = () => {
     return (
         <section id="services" className={css.servicesSection}>
-            
-            {/* 1. ОПРЕДЕЛЕНИЕ SVG-ГРАДИЕНТА (ОСТАЕТСЯ БЕЗ ИЗМЕНЕНИЙ) */}
+        
             <svg style={{ width: 0, height: 0, position: 'absolute' }}>
                 <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" style={{ stopColor: '#6c429c' }} /> 
@@ -21,21 +20,18 @@ const Services = () => {
             <div className={css.competenciesGrid}>
                 
                 <div className={css.competencyItem}>
-                    {/* ИЗМЕНЕНИЕ: Используем fill="url(#icon-gradient)" */}
                     <div className={css.icon}><FaRocket fill="url(#icon-gradient)" /></div> 
                     <h3 className={css.gridTitle}>Venture Building</h3>
                     <p>From idea generation and strategic planning to full market launch and fundraising support, we act as co-founders to accelerate your growth.</p>
                 </div>
                 
                 <div className={css.competencyItem}>
-                    {/* ИЗМЕНЕНИЕ: Используем fill="url(#icon-gradient)" */}
                     <div className={css.icon}><FaGears fill="url(#icon-gradient)" /></div>
                     <h3 className={css.gridTitle}>Product Engineering</h3>
                     <p>Building secure, scalable, and high-performance cloud-native platforms, specializing in complex B2B and SaaS architectures.</p>
                 </div>
                 
                 <div className={css.competencyItem}>
-                    {/* ИЗМЕНЕНИЕ: Используем fill="url(#icon-gradient)" */}
                     <div className={css.icon}><GiProgression fill="url(#icon-gradient)" /></div>
                     <h3 className={css.gridTitle}>Growth Strategy</h3>
                     <p>Data-driven performance marketing, brand development, and sustainable user acquisition campaigns designed for measurable results.</p>
@@ -54,7 +50,6 @@ const Services = () => {
                     <li>Digitalization of document flow</li>
                     <li>Ensuring IT security</li>
                 </ul>
-                {/* <button className={css.consultingCta}>Schedule an Audit</button> */}
             </div>
         </section>
     );

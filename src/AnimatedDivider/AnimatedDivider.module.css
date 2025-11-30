@@ -1,8 +1,7 @@
 .dividerContainer {
-    /* Задаємо фон для контейнера, де знаходиться полоска */
     background-color: #f0f0f0; 
-    padding: 0px; /* Зазвичай скидаємо паддінг у контейнері */
-    width: 100%; /* Займаємо всю ширину */
+    padding: 0px; 
+    width: 100%;
 }
 
 .divider {
@@ -18,7 +17,6 @@
     max-width: 85%;
     border-radius: 2px;
     transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
-    /* color: #f0f0f0; */
   }
   
   .isVisible {

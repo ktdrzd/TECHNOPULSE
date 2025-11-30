@@ -1,17 +1,13 @@
-import React, { useState } from 'react'; // 👈️ Не забудьте импортировать useState
+import React, { useState } from 'react';
 import css from './Contact.module.css';
 import Map from '../assets/map.png';
-
-// 👈️ Импорт компонентов модальных окон
 import PrivacyPolicyModal from '../PrivacyPolicyModal/PrivacyPolicyModal'
 import TermsOfUseModal from '../TermsOfUseModal/TermsOfUseModal';
 
 const Contact = () => {
-    // Состояния для управления видимостью модальных окон
     const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
     const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
 
-    // Функции для открытия/закрытия
     const openPrivacyModal = () => setIsPrivacyModalOpen(true);
     const closePrivacyModal = () => setIsPrivacyModalOpen(false);
 
@@ -24,7 +20,6 @@ const Contact = () => {
             
             <div className={css.contactContent}>
                 
-                {/* Контактная информация */}
                 <div className={css.infoBlock}>
                     <h3 className={css.infoTitle}>Connect with Us</h3>
                     <p className={css.contactDetail}>
@@ -39,7 +34,6 @@ const Contact = () => {
                     <img src={Map} alt="Office location" className={css.officeImage} />
                 </div>
                 
-                {/* Форма обратной связи */}
                 <form className={css.contactForm}>
                     <h3 className={css.infoTitle}>Send a Message</h3>
                     <input type="text" placeholder="Your Name" className={css.inputField} required />
@@ -48,8 +42,7 @@ const Contact = () => {
                     <button type="submit" className={css.submitButton}>
                         Send Inquiry
                     </button>
-                    
-                    {/* Секция с юридическими ссылками */}
+
                     <div className={css.legalLinks}>
                         <a 
                             href="#" 
@@ -70,8 +63,6 @@ const Contact = () => {
                 </form>
 
             </div>
-
-            {/* Модальные окна, управляемые состоянием */}
             <PrivacyPolicyModal isOpen={isPrivacyModalOpen} onClose={closePrivacyModal} />
             <TermsOfUseModal isOpen={isTermsModalOpen} onClose={closeTermsModal} />
 

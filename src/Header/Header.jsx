@@ -1,8 +1,5 @@
 import css from "./Header.module.css";
 import Head from "../Head/Head";
-// import GearsAnimation from "../GearsAnimation/GearsAnimation"; 
-// import Tech3DAnimation from "../Tech3DAnimation/Tech3DAnimation"; // Это больше не нужно, если вы используете img
-// import venenaLogo from '../assets/venena-logo.png'; // <--- ИМПОРТИРУЙТЕ ВАШЕ ЛОГО ЗДЕСЬ
 import Logo from '../assets/Logo.png';
 
 const Header = () => {
@@ -12,8 +9,6 @@ const Header = () => {
         <header className={css.mainHeader}> 
             <Head />
             <div className={css.heroSection}>
-                
-                {/* Левый текстовый блок */}
                 <div className={css.heroContentWrapper}> 
                     <div className={css.companyInfo}>
                         <h1 className={css.companyNameTop}>VENENA MARKETING </h1>
@@ -22,12 +17,9 @@ const Header = () => {
 
                     <p className={css.heroLocation}>Dubai, United Arab Emirates</p> 
                     <p className={css.heroText}>{heroDescription}</p>
-                    <button className={css.ctaButton}>Get Started</button>
                 </div>
                 
-                {/* Правый блок с логотипом/анимацией */}
                 <div className={css.animationContainer}>
-                    {/* Используем тег img для вашего логотипа */}
                     <img src={Logo} alt="Venena Marketing Logo" className={css.animatedLogo} />
                 </div>
 

@@ -1,6 +1,6 @@
 .contactSection {
     padding: 80px 20px;
-    background-color: #333; /* Темный фон для контраста с другими блоками */
+    background-color: #333;
     color: white;
     font-family: 'Roboto Slab', serif;
 }
@@ -10,7 +10,6 @@
     font-weight: 800;
     text-align: center;
     margin-bottom: 50px;
-    /* Градиентный текст */
     background: linear-gradient(90deg, #c74c96, #6c429c); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -29,11 +28,11 @@
     margin: 0 auto;
     display: flex;
     gap: 40px;
-    flex-wrap: wrap; /* Для адаптивности */
+    flex-wrap: wrap;
 }
 
 .infoBlock, .contactForm {
-    flex: 1 1 45%; /* Элементы занимают почти половину ширины */
+    flex: 1 1 45%; 
     min-width: 300px;
     padding: 20px;
 }
@@ -42,7 +41,7 @@
     font-size: 60px;
     font-weight: 700;
     margin-bottom: 25px;
-    color: #c74c96; /* Розовый акцент */
+    color: #c74c96; 
 }
 
 .contactDetail {
@@ -58,10 +57,8 @@
 
 .socialLinks {
     margin-top: 30px;
-    /* Стили для иконок соцсетей */
 }
 
-/* --- Форма --- */
 .inputField, .textareaField {
     width: 100%;
     padding: 12px;
@@ -76,7 +73,7 @@
 }
 
 .inputField:focus, .textareaField:focus {
-    border-color: #6c429c; /* Фиолетовый фокус */
+    border-color: #6c429c;
     outline: none;
 }
 
@@ -97,7 +94,6 @@
     opacity: 0.9;
 }
 
-/* Стили для ссылок в Contact.js */
 .legalLinks {
     margin-top: 20px;
     text-align: center;
@@ -105,14 +101,14 @@
 }
 
 .link {
-    color: #f2f2f2; /* Или ваш фирменный цвет */
+    color: #f2f2f2;
     text-decoration: none;
     cursor: pointer;
     transition: color 0.3s;
 }
 
 .link:hover {
-    color: #f2f2f2; /* Цвет при наведении */
+    color: #f2f2f2;
     text-decoration: underline;
 }
 
@@ -121,24 +117,17 @@
     color: #ccc;
 }
 
-
-/* Стили для самого модального окна */
 .modalOverlay {
-    /* Фиксированное положение на весь экран */
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    /* Полупрозрачный фон */
     background-color: rgba(0, 0, 0, 0.7);
-    /* Центрирование контента */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Поверх всего */
     z-index: 1000; 
-    /* Позволяет прокручивать, если содержимое не помещается */
     overflow-y: auto; 
     padding: 20px;
 }
@@ -147,10 +136,8 @@
     background: white;
     padding: 30px;
     border-radius: 10px;
-    /* Максимальная ширина, чтобы текст не был слишком широким */
     max-width: 800px; 
     width: 90%;
-    /* Добавляем прокрутку для самого контента, если он очень длинный */
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
@@ -229,7 +216,6 @@
 
     .legalLinks {
         font-size: 30px;
-        /* display: flex; */
         margin-top: 80px;
     }
 }

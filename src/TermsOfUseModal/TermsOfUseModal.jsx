@@ -6,7 +6,6 @@ const TermsOfUseModal = ({ isOpen, onClose }) => {
         return null;
     }
 
-    // ВАЖНО: Добавлен инлайн-стиль для принудительного черного цвета текста
     const contentStyle = {
         color: '#fff' 
     };
@@ -16,9 +15,8 @@ const TermsOfUseModal = ({ isOpen, onClose }) => {
             <div 
                 className={modalCss.modalContent} 
                 onClick={e => e.stopPropagation()}
-                style={{ backgroundColor: '#333' }} // Принудительный белый фон
+                style={{ backgroundColor: '#333' }}
             >
-                {/* Принудительный цвет текста для всего контейнера */}
                 <div className={modalCss.modalBody} style={contentStyle}>
                     
                     <h1>Terms of Use</h1>

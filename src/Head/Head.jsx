@@ -25,7 +25,6 @@ const Head = () => {
                 className={`${css.menuToggle} ${isOpen ? css.active : ''}`} 
                 onClick={() => setIsOpen(!isOpen)}
             >
-                {/* 🔥 Удалена вторая burgerLine для крестика 🔥 */}
                 <span className={css.burgerLine}></span>
                 <span className={css.burgerLine}></span> 
             </button>

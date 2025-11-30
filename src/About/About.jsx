@@ -10,12 +10,10 @@ const About = () => {
 
     return (
         <section id="about" className={css.mainWrapper}>
-            {/* Градиентный заголовок */}
             <h2 className={css.header}>About Us</h2>
             
             <div className={css.container}>
-                
-                {/* 1. Experience */}
+               
                 <div 
                     className={`${css.block} ${active === "exp" ? css.active : ''}`} 
                     onClick={() => toggle("exp")}
@@ -33,7 +31,6 @@ const About = () => {
                     </ul>
                 </div>
 
-                {/* 2. Versatility */}
                 <div 
                     className={`${css.block} ${active === "vers" ? css.active : ''}`} 
                     onClick={() => toggle("vers")}
@@ -51,7 +48,6 @@ const About = () => {
                     </ul>
                 </div>
 
-                {/* 3. Advantages */}
                 <div 
                     className={`${css.block} ${active === "adv" ? css.active : ''}`} 
                     onClick={() => toggle("adv")}
@@ -69,7 +65,6 @@ const About = () => {
                     </ul>
                 </div>
 
-                {/* 4. Mission */}
                 <div 
                     className={`${css.block} ${active === "mission" ? css.active : ''}`} 
                     onClick={() => toggle("mission")}

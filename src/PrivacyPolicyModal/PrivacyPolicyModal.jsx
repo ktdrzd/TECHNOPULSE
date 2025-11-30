@@ -6,7 +6,6 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
         return null;
     }
 
-    // Инлайн-стиль для принудительного белого цвета текста
     const contentStyle = {
         color: '#fff'
     };
@@ -16,11 +15,8 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
             <div
                 className={modalCss.modalContent}
                 onClick={e => e.stopPropagation()}
-                // Инлайн-стиль для принудительного темного фона
                 style={{ backgroundColor: '#333' }}
             >
-
-                {/* Принудительный цвет текста для всего контейнера */}
                 <div className={modalCss.modalBody} style={contentStyle}>
 
                     <h1>Privacy Policy</h1>
@@ -44,8 +40,6 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                     <p>
                         Мы не профилируем посетителей и не собираем данные для маркетинговых целей.
                     </p>
-
-                    {/* Таблица данных */}
                     <table className={modalCss.table}>
                         <thead>
                             <tr>
