@@ -12,17 +12,13 @@ const Contact = () => {
                 <div className={css.infoBlock}>
                     <h3 className={css.infoTitle}>Connect with Us</h3>
                     <p className={css.contactDetail}>
-                        Email: <span>hello@venena.marketing</span>
+                        Email: <span>fajufahad1989@gmail.com</span>
                     </p>
                     <p className={css.contactDetail}>
-                        Phone: <span>+44 20 7946 0999</span>
-                    </p>
+                        Phone: <span>+97 15 0131 2484</span>
+                    </p> 
                     <p className={css.contactDetail}>
-                        Office: <span>London, United Kingdom</span>
-                    </p>
-                    <p className={css.socialLinks}>
-                        {/* Здесь можно добавить иконки соцсетей */}
-                        [Social Icons]
+                        Office: <span>Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates</span>
                     </p>
                 </div>
                 

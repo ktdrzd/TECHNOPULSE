@@ -1,16 +1,16 @@
+/* Общие стили (Применяются и для десктопа/планшета) */
 .mainNav {
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 200px; /* Сохраняем отступы по бокам */
+  padding: 20px 200px;
   z-index: 100;
-  max-width: 800px; /* Устанавливаем ту же максимальную ширину */
-  margin: 0 auto; /* Центрируем блок */
-  box-sizing: border-box; /* Важно: учитывает padding в ширине */
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 /* Логотип */
@@ -28,12 +28,12 @@
 
 /* Кнопка переключения меню */
 .menuToggle {
-  display: none; /* Скрыть на десктопе */
+  display: none;
   background: none;
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 101; /* Поверх меню */
+  z-index: 101;
 }
 
 .burgerLine {
@@ -42,46 +42,74 @@
   height: 6px;
   background-color: white;
   margin: 5px 0;
-  transition: all 0.3s ease;
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Анимация крестика */
+/* Анимация крестика (Две линии) */
 .menuToggle.active .burgerLine:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(11px) rotate(45deg);
+}
+.menuToggle.active .burgerLine:nth-child(2) { 
+  transform: translateY(-11px) rotate(-45deg);
 }
 
-.menuToggle.active .burgerLine:nth-child(2) {
-  opacity: 0; /* Скрываем среднюю линию */
+/* Оверлей (Скрыт по умолчанию) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 90;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
 }
 
-.menuToggle.active .burgerLine:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-/* Меню навигации (Базовые стили) */
+/* Навигационное меню (Горизонтальный вид по умолчанию) */
 .navMenu {
   display: flex;
   align-items: center;
   transition: transform 0.3s ease-in-out;
 }
-
 .navList {
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
 }
-
 .navItem a {
   color: white;
   text-decoration: none;
   font-size: 1rem;
+  font-weight: 500;
   margin-left: 30px;
   transition: color 0.3s;
+  position: relative;
+  padding-bottom: 2px;
 }
-
 .navItem a:hover {
-  color: #c74c96; /* Розовый акцент */
+  color: #c74c96;
+}
+.navItem a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #6c429c;
+  transition: width 0.3s ease;
+}
+.navItem a:hover::after {
+  width: 100%;
 }
 
 .ctaNavButton {
@@ -91,72 +119,171 @@
   padding: 8px 18px;
   font-size: 0.9rem;
   font-weight: 600;
-  border-radius: 5px;
+  border-radius: 50px;
   margin-left: 30px;
   cursor: pointer;
   transition: all 0.3s;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 6px rgba(199, 76, 150, 0.4);
 }
-
 .ctaNavButton:hover {
   background-color: transparent;
   border-color: #6c429c;
   color: #6c429c;
+  box-shadow: 0 4px 15px rgba(108, 66, 156, 0.6);
 }
 
-/* --- 📱 Медиазапрос для мобильных устройств (Бургер-меню) --- */
+/* --- 📱 Медиазапрос для МОБИЛЬНЫХ устройств (Max-width: 768px) --- */
 @media (max-width: 768px) {
   .mainNav {
-    padding: 15px 25px; /* Уменьшаем отступы на мобильных */
+    padding: 15px 25px;
+    max-width: 100%;
   }
 
-  /* Показываем кнопку бургера */
   .menuToggle {
     display: block;
   }
 
-  /* Навигационное меню (мобильная версия) */
   .navMenu {
-    /* Фиксируем меню на весь экран и смещаем его влево */
     position: fixed;
     top: 0;
     right: 0;
-    width: 100%; /* Ширина меню (можно настроить) */
+    width: 75%;
+    max-width: 350px;
     height: 100vh;
-    background-color: #1e1e1e; /* Темный фон для меню */
-    flex-direction: column; /* Элементы вертикально */
-    justify-content: flex-start; /* Начинаем сверху */
+    background-color: #1e1e1e;
+    flex-direction: column;
+    justify-content: flex-start;
     padding: 100px 30px 30px;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-    /* Скрываем меню, смещая его за край экрана */
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.9);
     transform: translateX(100%);
     z-index: 99;
   }
 
-  /* Класс для отображения меню */
   .navMenu.active {
-    transform: translateX(0); /* Сдвигаем обратно на экран */
+    transform: translateX(0);
   }
 
   .navList {
-    flex-direction: column; /* Пункты меню вертикально */
+    flex-direction: column;
     width: 100%;
+    margin-bottom: 30px;
   }
 
   .navItem {
-    margin: 15px 0;
-    text-align: center;
+    margin: 20px 0;
+    text-align: left;
   }
 
   .navItem a {
-    margin: 0; /* Убираем горизонтальный отступ */
+    margin: 0;
     padding: 10px 0;
-    display: block; /* Занимает всю ширину */
-    font-size: 1.2rem;
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    color: #f0f0f0;
+    position: relative; 
   }
 
-  .ctaNavButton {
-    margin: 20px 0 0 0; /* Отступ сверху */
-    width: 100%; /* Полная ширина кнопки */
-    text-align: center;
+  /* Стили для полосочек под надписями в мобильном меню */
+  .navItem a::after {
+    content: '';
+    position: absolute;
+    width: 90px;
+    height: 3px;
+    bottom: -10px;
+    left: 0;
+    background-color: #c74c96;
+    border-radius: 2px;
+    transition: all 0.2s ease-out; 
   }
+
+  /* Скрываем полоску и сохраняем цвет текста при взаимодействии */
+  .navItem a:hover::after,
+  .navItem a:active::after,
+  .navItem a:focus::after {
+    width: 0;
+    opacity: 0;
+  }
+
+  .navItem a:hover,
+  .navItem a:active,
+  .navItem a:focus {
+    color: #f0f0f0;
+  }
+  
+  .ctaNavButton {
+    margin: 0;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+  }
+}
+
+/* --- 💻 Медиазапрос для ПЛАНШЕТОВ и ДЕСКТОПОВ (Min-width: 769px) --- */
+@media (min-width: 768px) { /* 🔥 Скорректировано на 769px для ясности */
+    
+    /* 🔥 СДЕЛАНО: МЕНЮ ФИКСИРОВАННОЕ И ПОЛНОШИРИННОЕ 🔥 */
+    .mainNav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        max-width: none; 
+        margin: 0;      
+        background-color: #1e1e1e;
+        padding: 10px 50px; /* Уменьшаем боковые отступы, чтобы уместиться на маленьком планшете */
+    }
+
+    /* Дополнительный блок для центрирования контента внутри .mainNav (если нужно) */
+    /* Вы можете обернуть содержимое .mainNav в дополнительный div и центрировать его */
+    /* Или просто оставить отступы 20px 200px, если вам не нужна полноширинная полоса */
+
+    /* Скрываем бургер и оверлей */
+    .menuToggle {
+        display: none !important;
+    }
+    .overlay {
+        display: none !important;
+    }
+
+    /* Убеждаемся, что навигация отображается как горизонтальная строка */
+    .navMenu {
+        display: flex !important;
+        position: static !important;
+        transform: none !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+        height: auto !important;
+        width: auto !important;
+        padding: 0 !important;
+    }
+
+    .navList {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+
+    .navItem {
+        margin: 0;
+    }
+    
+    .navItem a {
+        font-size: 1rem;
+        font-weight: 500;
+        /* Убеждаемся, что горизонтальный отступ возвращается для десктопа */
+        margin-left: 30px; 
+    }
+    
+    /* Восстанавливаем десктопный эффект полоски при наведении */
+    .navItem a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #6c429c;
+        transition: width 0.3s ease;
+    }
 }

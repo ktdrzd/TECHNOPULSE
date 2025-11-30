@@ -31,21 +31,19 @@
     box-sizing: border-box;
 }
 
-/* ... (Остальные стили навигации, логотипа, heroSection, ctaButton) ... */
-
-/* --- СТИЛИ НАЧАЛА СЕКЦИИ "ABOUT US" --- */
-
 .mainWrapper {
-    padding: 80px 20px;
+    padding: 60px 20px;
     background-color: #f0f0f0;
     font-family: 'Roboto Slab', serif;
 }
 
 .header {
-    font-size: 110px;
+    font-size: 90px;
     font-weight: 800;
     text-align: center;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
+    margin: 0;
+    margin-bottom: 15px;
     text-transform: uppercase;
     background: linear-gradient(90deg, #6c429c, #c74c96); 
     -webkit-background-clip: text;
@@ -53,9 +51,6 @@
     background-clip: text;
     color: transparent;
 }
-
-
-/* --- КОНТЕЙНЕР БЛОКОВ --- */
 
 .container {
     max-width: 900px;
@@ -65,8 +60,6 @@
     gap: 15px; 
 }
 
-/* --- СТИЛИ ДЛЯ ОТДЕЛЬНОГО БЛОКА АККОРДЕОНА --- */
-
 .block {
     background: white; 
     padding: 20px 25px;
@@ -74,14 +67,11 @@
     cursor: pointer;
     transition: all 0.4s ease; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
-    
-    /* Стили для анимации бордера */
     position: relative; 
     z-index: 1; 
     overflow: hidden; 
 }
 
-/* ПСЕВДОЭЛЕМЕНТ 1: ЗМЕЙКА (ГРАДИЕНТ, КОТОРЫЙ ВРАЩАЕТСЯ) */
 .block::before {
     content: "";
     position: absolute;
@@ -91,15 +81,14 @@
     height: 200%;
     background: linear-gradient(
         60deg,
-        #6c429c, /* Фиолетовый */
-        #c74c96, /* Розовый */
-        #6c429c /* Фиолетовый (для повтора) */
+        #6c429c, 
+        #c74c96,
+        #6c429c
     );
     z-index: -1; 
     animation: borderSnake 4s linear infinite; 
 }
 
-/* ПСЕВДОЭЛЕМЕНТ 2: БЕЛОЕ ПЕРЕКРЫТИЕ (СОЗДАЕТ ЭФФЕКТ ТОНКОГО БОРДЕРА) */
 .block::after {
     content: "";
     position: absolute;
@@ -107,7 +96,7 @@
     left: 2px;
     right: 2px;
     bottom: 2px;
-    background: white; /* Цвет фона блока */
+    background: white;
     border-radius: 10px; 
     z-index: 0; 
 }
@@ -126,10 +115,11 @@
 }
 
 
-/* --- ЛОГИКА СКРЫТИЯ/ОТОБРАЖЕНИЯ КОНТЕНТА --- */
+/* ----------------------------------------------------------------- */
+/* --- ЛОГИКА СКРЫТИЯ/ОТОБРАЖЕНИЯ КОНТЕНТА (ИЗМЕНЕНО) --- */
+/* ----------------------------------------------------------------- */
 
-/* Скрываем контент по умолчанию */
-.desc,
+/* Скрываем ТОЛЬКО список subpoints по умолчанию */
 .subpoints {
     max-height: 0;
     overflow: hidden;
@@ -138,32 +128,34 @@
     transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, margin-top 0.4s ease-in-out; 
 }
 
-/* При активации блока (через JS добавляется класс .active) - показываем контент */
-.block.active .desc,
+/* При активации блока (через JS добавляется класс .active) - показываем ТОЛЬКО список */
 .block.active .subpoints {
     max-height: 1000px; /* Достаточно большое значение для контента */
     opacity: 1;
+    margin-top: 15px; /* Устанавливаем отступ при раскрытии */
 }
 
-/* Корректировка отступа для видимого контента */
-.block.active .desc {
-    margin-top: 10px; 
-}
-
+/* ----------------------------------------------------------------- */
 /* --- СТИЛИ ВНУТРЕННЕГО ТЕКСТА И Z-INDEX --- */
 
 .title {
-    font-size: 70px; 
+    font-size: 50px; 
     font-weight: 700;
-    margin-bottom: 0; 
-    color: #333; 
+    /* margin-bottom: 0;  */
+    margin: 0;
+    margin-top: 10px;
+    background: linear-gradient(90deg, #6c429c, #c74c96); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
     position: relative; z-index: 2; 
 }
 
 .desc {
-    font-size: 50px;
+    font-size: 35px;
     line-height: 1.6;
-    /* margin-top: 10px; - Управляется классом .block.active .desc */
+    margin-top: 10px; /* Всегда видим и имеет отступ */
     color: #555; 
     position: relative; z-index: 2; 
 }
@@ -171,7 +163,7 @@
 /* --- СТИЛИ РАЗВОРАЧИВАЮЩЕГОСЯ СПИСКА --- */
 
 .subpoints {
-    margin-top: 15px;
+    /* margin-top: 15px; */ /* Отступ устанавливается при .block.active .subpoints */
     padding-left: 25px;
     list-style-type: none; 
     border-top: 1px solid #e0e0e0;
@@ -186,7 +178,7 @@
 }
 
 .subpoints li {
-    font-size: 50px;
+    font-size: 35px;
     color: #444;
     margin-bottom: 8px;
     position: relative;

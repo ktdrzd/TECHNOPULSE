@@ -1,14 +1,16 @@
    .servicesSection {
-    padding: 80px 20px;
-    background-color: #f9f9f9;
+    padding: 50px 20px;
+    background-color: #f0f0f0;
     font-family: 'Roboto Slab', serif;
 }
 
 .mainHeading {
-  font-size: 110px;
+  font-size: 90px;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
+  margin: 0;
+  margin-bottom: 30px;
   text-transform: uppercase;
   background: linear-gradient(90deg, #6c429c, #c74c96); 
   -webkit-background-clip: text;
@@ -33,6 +35,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: box-shadow 0.3s, transform 0.3s;
     text-align: center;
+    margin-bottom: 15px;
 }
 
 .competencyItem:hover {
@@ -42,21 +45,23 @@
 
 .icon {
     font-size: 90px;
-    margin-bottom: 15px;
+    /* margin-bottom: 15px; */
     line-height: 1;
     color: #6c429c;
 }
 
 .gridTitle {
-    font-size: 70px;
+    font-size: 50px;
     font-weight: 700;
-    color: #6c429c; /* Фиолетовый акцент */
-    margin-bottom: 10px;
+    color: #6c429c;
+    margin: 0;
+    margin-top: 10px;
 }
 
 .competencyItem p {
     color: #555;
-    font-size: 45px;
+    font-size: 35px;
+    margin: 0;
 }
 
 /* --- Блок консалтинга (Выделенный) --- */
@@ -71,14 +76,14 @@
 }
 
 .consultingHeading {
-    font-size: 70px;
+    font-size: 50px;
     font-weight: 800;
     margin-bottom: 20px;
     color: #c74c96; /* Розовый акцент */
 }
 
 .consultingText {
-    font-size: 45px;
+    font-size: 40px;
     margin-bottom: 30px;
     line-height: 1.6;
 }
@@ -94,7 +99,7 @@
 }
 
 .consultingList li {
-    font-size: 40px;
+    font-size: 25px;
     padding: 5px 20px;
     margin: 5px;
     border: 2px solid rgba(255, 255, 255, 0.3);
