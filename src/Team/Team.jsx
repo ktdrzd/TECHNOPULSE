@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react'; // <--- ДОДАНО ХУКИ
 import css from './Team.module.css';
-import CEO from '../assets/Ceo.jpg';
+import CEO from '../assets/CEO.jpg';
 import YULIA from '../assets/YULIA.jpg';
 import ANDRII from '../assets/ANDRII.jpg';
 
