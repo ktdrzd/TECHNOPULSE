@@ -1,7 +1,23 @@
-// import React from 'react';
+import React, { useState } from 'react'; // 👈️ Не забудьте импортировать useState
 import css from './Contact.module.css';
+import Map from '../assets/map.png';
+
+// 👈️ Импорт компонентов модальных окон
+import PrivacyPolicyModal from '../PrivacyPolicyModal/PrivacyPolicyModal'
+import TermsOfUseModal from '../TermsOfUseModal/TermsOfUseModal';
 
 const Contact = () => {
+    // Состояния для управления видимостью модальных окон
+    const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
+    const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
+
+    // Функции для открытия/закрытия
+    const openPrivacyModal = () => setIsPrivacyModalOpen(true);
+    const closePrivacyModal = () => setIsPrivacyModalOpen(false);
+
+    const openTermsModal = () => setIsTermsModalOpen(true);
+    const closeTermsModal = () => setIsTermsModalOpen(false);
+
     return (
         <section id="contact" className={css.contactSection}>
             <h2 className={css.heading}>Let's Build Something Great</h2>
@@ -20,6 +36,7 @@ const Contact = () => {
                     <p className={css.contactDetail}>
                         Office: <span>Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates</span>
                     </p>
+                    <img src={Map} alt="Office location" className={css.officeImage} />
                 </div>
                 
                 {/* Форма обратной связи */}
@@ -31,9 +48,33 @@ const Contact = () => {
                     <button type="submit" className={css.submitButton}>
                         Send Inquiry
                     </button>
+                    
+                    {/* Секция с юридическими ссылками */}
+                    <div className={css.legalLinks}>
+                        <a 
+                            href="#" 
+                            onClick={(e) => { e.preventDefault(); openPrivacyModal(); }}
+                            className={css.link}
+                        >
+                            Privacy Policy
+                        </a>
+                        <span className={css.linkSeparator}>|</span>
+                        <a 
+                            href="#" 
+                            onClick={(e) => { e.preventDefault(); openTermsModal(); }}
+                            className={css.link}
+                        >
+                            Terms of Use
+                        </a>
+                    </div>
                 </form>
 
             </div>
+
+            {/* Модальные окна, управляемые состоянием */}
+            <PrivacyPolicyModal isOpen={isPrivacyModalOpen} onClose={closePrivacyModal} />
+            <TermsOfUseModal isOpen={isTermsModalOpen} onClose={closeTermsModal} />
+
         </section>
     );
 };

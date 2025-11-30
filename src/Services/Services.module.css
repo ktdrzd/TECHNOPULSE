@@ -21,8 +21,8 @@
 
 /* --- Сетка компетенций --- */
 .competenciesGrid {
-    /* display: grid; */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: grid;
+    grid-template-columns: 1fr; /* по умолчанию один блок на строку */
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto 60px;
@@ -107,19 +107,43 @@
     color: #c74c96;
 }
 
-/* .consultingCta {
-    background-color: #c74c96;
-    color: white;
-    border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+@media (min-width: 992px) {
+
+    .competenciesGrid {
+        grid-template-columns: repeat(2, 1fr); /* два блока в ряд */
+    }
+
+    /* Третий блок всегда на новой строке */
+    .competenciesGrid .competencyItem:nth-child(3) {
+        grid-column: 1 / -1; /* занимает всю ширину */
+    }
+
+    .consultingBlock {
+        max-width: 100%;
+    }
+
+    .gridTitle {
+        font-size: 40px;
+    }
+
+    .competencyItem p {
+        font-size: 25px;
+    }
+
+    .icon {
+        font-size: 70px;
+    }
+
+    
+.consultingHeading {
+    font-size: 40px;
 }
 
-.consultingCta:hover {
-    background-color: #6c429c;
-    transform: scale(1.05);
-} */
+.consultingText {
+    font-size: 30px;
+}
+
+.consultingList li {
+    font-size: 15px;
+}
+}

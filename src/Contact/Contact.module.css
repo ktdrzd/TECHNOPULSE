@@ -18,6 +18,12 @@
     color: transparent;
 }
 
+.officeImage {
+    width: 100%; 
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
 .contactContent {
     max-width: 1000px;
     margin: 0 auto;
@@ -61,7 +67,7 @@
     padding: 12px;
     margin-bottom: 15px;
     border: 1px solid #555;
-    border-radius: 5px;
+    border-radius: 20px;
     background-color: #444;
     color: white;
     font-size: 30px;
@@ -82,11 +88,148 @@
     padding: 15px;
     font-size: 40px;
     font-weight: 700;
-    border-radius: 5px;
+    border-radius: 40px;
     cursor: pointer;
     transition: opacity 0.3s;
 }
 
 .submitButton:hover {
     opacity: 0.9;
+}
+
+/* Стили для ссылок в Contact.js */
+.legalLinks {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.link {
+    color: #f2f2f2; /* Или ваш фирменный цвет */
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #f2f2f2; /* Цвет при наведении */
+    text-decoration: underline;
+}
+
+.linkSeparator {
+    margin: 0 10px;
+    color: #ccc;
+}
+
+
+/* Стили для самого модального окна */
+.modalOverlay {
+    /* Фиксированное положение на весь экран */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Полупрозрачный фон */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Центрирование контента */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Поверх всего */
+    z-index: 1000; 
+    /* Позволяет прокручивать, если содержимое не помещается */
+    overflow-y: auto; 
+    padding: 20px;
+}
+
+.modalContent {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    /* Максимальная ширина, чтобы текст не был слишком широким */
+    max-width: 800px; 
+    width: 90%;
+    /* Добавляем прокрутку для самого контента, если он очень длинный */
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modalContent h1, .modalContent h2, .modalContent h3 {
+    color: #333;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.modalContent p, .modalContent ul {
+    line-height: 1.6;
+    margin-bottom: 1em;
+}
+
+.modalContent table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.modalContent th, .modalContent td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.modalContent th {
+    background-color: #f2f2f2;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    line-height: 1;
+    padding: 5px 10px;
+}
+
+.closeButton:hover {
+    color: #000;
+}
+
+@media (min-width: 990px) {
+    .contactContent {
+        max-width: 100%;
+        padding: 30px;
+    }
+
+    .heading {
+        margin-bottom: 0;
+    }
+
+    .infoTitle {
+        font-size: 50px;
+    }
+    
+    .contactDetail {
+        font-size: 20px;
+    }
+
+    .inputField, .textareaField {
+        font-size: 20px;
+    }
+    
+    .submitButton {
+        font-size: 30px;
+    }
+
+    .legalLinks {
+        font-size: 30px;
+        /* display: flex; */
+        margin-top: 80px;
+    }
 }

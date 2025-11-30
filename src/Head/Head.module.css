@@ -269,7 +269,7 @@
     }
     
     .navItem a {
-        font-size: 1rem;
+        font-size: 20px;
         font-weight: 500;
         /* Убеждаемся, что горизонтальный отступ возвращается для десктопа */
         margin-left: 30px; 
