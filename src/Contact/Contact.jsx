@@ -23,10 +23,10 @@ const Contact = () => {
                 <div className={css.infoBlock}>
                     <h3 className={css.infoTitle}>Connect with Us</h3>
                     <p className={css.contactDetail}>
-                        Email: <span>fajufahad1989@gmail.com</span>
+                        Email: <span>venena.fzco@proton.me</span>
                     </p>
                     <p className={css.contactDetail}>
-                        Phone: <span>+97 15 0131 2484</span>
+                        Phone: <span>+97 15 0733 7042</span>
                     </p> 
                     <p className={css.contactDetail}>
                         Office: <span>Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates</span>
