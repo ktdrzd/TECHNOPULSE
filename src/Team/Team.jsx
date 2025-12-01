@@ -7,21 +7,21 @@ import ANDRII from '../assets/ANDRII.jpg';
 const teamMembers = [
     {
         id: 1,
-        name: "VLADYSLAV VITENKO",
+        name: "FAHAD MUHAMMED",
         role: "CEO",
         bio: "Leads the company, responsible for the strategy of developing secure cloud-native products and their scalable growth through measurable marketing and brand integrity.",
         imageSrc: CEO,
     },
     {
         id: 2,
-        name: "YULIIA DIATLOVA",
+        name: "YAROSLAVNA BAKHAEVA",
         role: "CTCO",
         bio: "Oversees the technological architecture and cybersecurity of cloud products, ensuring all processes and data pipelines achieve full regulatory compliance.",
         imageSrc: YULIA,
     },
     {
         id: 3,
-        name: "ANDRII KURINNYI",
+        name: "VLADYSLAV VITENKO",
         role: "CPGO",
         bio: "Defines product strategy (including R&D) and drives growth via performance marketing, ensuring brand integrity and maximizing user value.",
         imageSrc: ANDRII,
@@ -72,9 +72,8 @@ const TeamMemberCard = ({ member }) => {
 const Team = () => {
     return (
         <section id="team" className={css.teamSection}>
-            <h2 className={css.heading}>Our Team</h2>
+            <h2 className={css.heading}>Management Team</h2>
             <p className={css.subText}>A cross-functional group of experts dedicated to your success.</p>
-            
             <div className={css.teamGrid}>
                 {teamMembers.map((member) => (
                     <TeamMemberCard key={member.id} member={member} />
