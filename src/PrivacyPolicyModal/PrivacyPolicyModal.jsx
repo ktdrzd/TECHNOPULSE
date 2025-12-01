@@ -57,7 +57,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                     <ul>
                         <li>Under the UAE PDPL, You have the right to access, correct, erase, restrict, or object to the processing of your personal data.</li>
                         <li>You may also request data portability or withdraw your consent.</li>
-                        <li>Requests can be sent to fajufahad1989@gmail.com.</li>
+                        <li>Requests can be sent to venena.fzco@proton.me.</li>
                     </ul>
 
                     <h3>Data Sharing</h3>
@@ -86,9 +86,9 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
 
                     <h3>Contact Us</h3>
                     <ul>
-                        <li>Email: fajufahad1989@gmail.com</li>
+                        <li>Email: venena.fzco@proton.me</li>
                         <li>Address: Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates, UAE</li>
-                        <li>Phone: +97 15 0131 2484</li>
+                        <li>Phone: +97 15 0733 7042</li>
                     </ul>
                     <p>© 2025 VENENA MARKETING SERVICES - FZCO. All rights reserved.</p>
                 </div>

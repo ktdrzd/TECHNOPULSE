@@ -29,7 +29,7 @@ const TermsOfUseModal = ({ isOpen, onClose }) => {
                     <h1>Terms of Use</h1>
                     <p>Last updated: November 25, 2025</p>
                     <p>
-                        You are on the website venenafzco.uk (hereinafter – the “Website”), which is owned and operated by VENENA MARKETING SERVICES - FZCO, a company duly incorporated and registered under the laws of England and Wales, with company number 72094, and its Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates, UAE (hereinafter – “INSIGHTIQ”, “We”, “Us”, “Our”).
+                        You are on the website venenafzco.uk (hereinafter – the “Website”), which is owned and operated by VENENA MARKETING SERVICES - FZCO, a company duly incorporated and registered under the laws of England and Wales, with company number 72094, and its Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates, UAE (hereinafter – “VENENA”, “We”, “Us”, “Our”).
                     </p>
                     <p>
                         These Terms of Use govern the relationship between Users and VENENA. Please read these Terms carefully before using the Website.
@@ -95,14 +95,14 @@ const TermsOfUseModal = ({ isOpen, onClose }) => {
 
                     <h3>9. GOVERNING LAW & DISPUTE RESOLUTION</h3>
                     <p>
-                        These Terms shall be governed by the laws of the United Arab Emirates. Any dispute shall first be attempted to resolve through good-faith negotiations by contacting fajufahad1989@gmail.com. If unresolved, disputes shall be referred to arbitration in If unresolved, disputes shall be referred to arbitration under the rules of the Dubai Integrated Economic Zones Arbitration Centre (DIEZA Arbitration Centre), in Dubai, UAE. The language of proceedings shall be English.
+                        These Terms shall be governed by the laws of the United Arab Emirates. Any dispute shall first be attempted to resolve through good-faith negotiations by contacting venena.fzco@proton.me. If unresolved, disputes shall be referred to arbitration in If unresolved, disputes shall be referred to arbitration under the rules of the Dubai Integrated Economic Zones Arbitration Centre (DIEZA Arbitration Centre), in Dubai, UAE. The language of proceedings shall be English.
                     </p>
 
                     <h3>10. CONTACT</h3>
                     <ul>
-                        <li>Email: office@insightiqlabs.uk</li>
+                        <li>Email: venena.fzco@proton.me</li>
                         <li>Address: Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates, UAE</li>
-                        <li>Phone: +97 15 0131 2484</li>
+                        <li>Phone: +97 15 0733 7042</li>
                     </ul>
                     <p>© 2025 VENENA MARKETING SERVICES - FZCO. All rights reserved.</p>
 
