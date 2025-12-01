@@ -16,7 +16,7 @@ const Contact = () => {
 
     return (
         <section id="contact" className={css.contactSection}>
-            <h2 className={css.heading}>Let's Build Something Great</h2>
+            <h2 className={css.heading}>Let's build something great</h2>
             
             <div className={css.contactContent}>
                 
