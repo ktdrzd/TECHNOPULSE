@@ -16,7 +16,6 @@
 .modalContent {
     background-color: #E0E0E0; 
     color: #333;
-    
     padding: 30px;
     border-radius: 10px;
     max-width: 800px; 
@@ -39,6 +38,7 @@
 .modalContent p, .modalContent ul {
     line-height: 1.6;
     margin-bottom: 1em;
+    font-size: 15px;
 }
 
 .modalContent table {
@@ -74,6 +74,11 @@
     color: #fff;
 }
 
-.table thead th {
-    background-color: #c74c96;
-}
+
+.modalContent ul {
+    list-style-type: none;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    font-size: 15px;
+    padding-left: 0; 
+    }

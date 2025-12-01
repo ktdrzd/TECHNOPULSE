@@ -17,6 +17,13 @@ const TermsOfUseModal = ({ isOpen, onClose }) => {
                 onClick={e => e.stopPropagation()}
                 style={{ backgroundColor: '#333' }}
             >
+                <button 
+                    className={modalCss.closeButton} 
+                    onClick={onClose}
+                    aria-label="Close"
+                >
+                    &times; {/* HTML-сущность для крестика (×) */}
+                </button>
                 <div className={modalCss.modalBody} style={contentStyle}>
                     
                     <h1>Terms of Use</h1>

@@ -17,6 +17,13 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
                 onClick={e => e.stopPropagation()}
                 style={{ backgroundColor: '#333' }}
             >
+                <button 
+                    className={modalCss.closeButton} 
+                    onClick={onClose}
+                    aria-label="Close"
+                >
+                    &times; {/* HTML-сущность для крестика (×) */}
+                </button>
                 <div className={modalCss.modalBody} style={contentStyle}>
 
                     <h1>Privacy Policy</h1>
@@ -38,32 +45,8 @@ const PrivacyPolicyModal = ({ isOpen, onClose }) => {
 
                     <h3>Data We Collect</h3>
                     <p>
-                        Мы не профилируем посетителей и не собираем данные для маркетинговых целей.
+                    We only collect personal data that You voluntarily provide to us, including name, email address, and message details. Technical logs may be automatically recorded by our hosting provider for security purposes. Data is stored securely and retained for no longer than one year, unless required by law.
                     </p>
-                    <table className={modalCss.table}>
-                        <thead>
-                            <tr>
-                                <th>Data type</th>
-                                <th>Source</th>
-                                <th>Purpose</th>
-                                <th>Retention Period</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Name, email, message details</td>
-                                <td>Voluntarily provided by You</td>
-                                <td>To respond to inquiries</td>
-                                <td>1 year, unless otherwise required by UAE law</td>
-                            </tr>
-                            <tr>
-                                <td>Technical logs</td>
-                                <td>Automatically recorded by hosting provider</td>
-                                <td>Security and operational purposes</td>
-                                <td>1 year, unless otherwise required by UAE law</td>
-                            </tr>
-                        </tbody>
-                    </table>
 
                     <h3>Legal Basis for Processing</h3>
                     <p>

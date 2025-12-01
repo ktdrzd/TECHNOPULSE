@@ -8,13 +8,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 1000; 
     overflow-y: auto; 
     padding: 20px;
 }
 
 .modalContent {
-    background-color: #E0E0E0;
+    background-color: #E0E0E0; 
     color: #333;
     padding: 30px;
     border-radius: 10px;
@@ -38,6 +38,7 @@
 .modalContent p, .modalContent ul {
     line-height: 1.6;
     margin-bottom: 1em;
+    font-size: 15px;
 }
 
 .modalContent table {
@@ -72,3 +73,12 @@
 .closeButton:hover {
     color: #fff;
 }
+
+
+.modalContent ul {
+    list-style-type: none;
+    line-height: 1.6;
+    margin-bottom: 1em;
+    font-size: 15px;
+    padding-left: 0; 
+    }
