@@ -6,7 +6,7 @@
 }
 
 .heading {
-    font-size: 90px;
+    font-size: 40px;
     font-weight: 800;
     text-align: center;
     margin-bottom: 50px;
@@ -18,7 +18,7 @@
 }
 
 .officeImage {
-    width: 100%; 
+    max-width: 250px; 
     margin-top: 20px;
     border-radius: 10px;
 }
@@ -33,19 +33,19 @@
 
 .infoBlock, .contactForm {
     flex: 1 1 45%; 
-    min-width: 300px;
+    /* min-width: 300px; */
     padding: 20px;
 }
 
 .infoTitle {
-    font-size: 60px;
+    font-size: 30px;
     font-weight: 700;
     margin-bottom: 25px;
     color: #c74c96; 
 }
 
 .contactDetail {
-    font-size: 30px;
+    font-size: 15px;
     margin-bottom: 15px;
     line-height: 1.5;
 }
@@ -67,7 +67,7 @@
     border-radius: 20px;
     background-color: #444;
     color: white;
-    font-size: 30px;
+    font-size: 15px;
     box-sizing: border-box;
     transition: border-color 0.3s;
 }
@@ -83,7 +83,7 @@
     color: white;
     border: none;
     padding: 15px;
-    font-size: 40px;
+    font-size: 20px;
     font-weight: 700;
     border-radius: 40px;
     cursor: pointer;

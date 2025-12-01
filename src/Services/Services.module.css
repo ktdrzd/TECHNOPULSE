@@ -5,7 +5,7 @@
 }
 
 .mainHeading {
-  font-size: 90px;
+  font-size: 40px;
   font-weight: 800;
   text-align: center;
   margin: 0;
@@ -42,13 +42,13 @@
 }
 
 .icon {
-    font-size: 90px;
+    font-size: 40px;
     line-height: 1;
     color: #6c429c;
 }
 
 .gridTitle {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 700;
     color: #6c429c;
     margin: 0;
@@ -57,7 +57,7 @@
 
 .competencyItem p {
     color: #555;
-    font-size: 35px;
+    font-size: 20px;
     margin: 0;
 }
 
@@ -72,14 +72,14 @@
 }
 
 .consultingHeading {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 800;
     margin-bottom: 20px;
     color: #c74c96; 
 }
 
 .consultingText {
-    font-size: 40px;
+    font-size: 20px;
     margin-bottom: 30px;
     line-height: 1.6;
 }
@@ -95,7 +95,7 @@
 }
 
 .consultingList li {
-    font-size: 25px;
+    font-size: 15px;
     padding: 5px 20px;
     margin: 5px;
     border: 2px solid rgba(255, 255, 255, 0.3);

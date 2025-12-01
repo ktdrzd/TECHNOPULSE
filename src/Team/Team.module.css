@@ -5,7 +5,7 @@
 }
 
 .heading {
-    font-size: 90px;
+    font-size: 40px;
     font-weight: 800;
     text-align: center;
     margin: 0;
@@ -19,7 +19,7 @@
 
 .subText {
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     color: #666;
     margin: 0;
     margin-bottom: 30px;
@@ -54,8 +54,8 @@
 }
 
 .photoPlaceholder {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     overflow: hidden; 
     border: 3px solid #6c429c; 
@@ -78,7 +78,7 @@
 }
 
 .memberName {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 700;
     background: linear-gradient(90deg, #6c429c, #c74c96); 
     -webkit-background-clip: text;
@@ -89,7 +89,7 @@
 }
 
 .memberRole {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 600;
     color: #c74c96;
     margin: 0;
@@ -98,7 +98,7 @@
 }
 
 .memberBio {
-    font-size: 30px;
+    font-size: 20px;
     color: #777;
     line-height: 1.5;
 }

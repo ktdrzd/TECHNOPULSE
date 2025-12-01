@@ -8,7 +8,7 @@
     color: white; 
     font-family: 'Roboto Slab', serif;
     min-height: 100vh; 
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     padding-bottom: 50px;
@@ -44,7 +44,7 @@
 }
 
 .companyNameTop {
-    font-size: 80px;
+    font-size: 35px;
     font-weight: 700; 
     letter-spacing: 5px; 
     margin: 0;
@@ -55,20 +55,20 @@
 }
 
 .companyNameBottom {
-    font-size: 70px; 
+    font-size: 25px; 
     font-weight: 500;
     margin: 0;
     text-transform: uppercase;
 }
 
 .heroLocation { 
-    font-size: 40px;
+    font-size: 15px;
     margin-bottom: 30px;
     opacity: 0.8;
 }
 
 .heroText {
-    font-size: 40px;
+    font-size: 20px;
     font-weight: 400; 
     line-height: 1.6;
     margin: 30px 0;
