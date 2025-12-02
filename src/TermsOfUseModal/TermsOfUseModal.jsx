@@ -29,7 +29,7 @@ const TermsOfUseModal = ({ isOpen, onClose }) => {
                     <h1>Terms of Use</h1>
                     <p>Last updated: November 25, 2025</p>
                     <p>
-                        You are on the website venenafzco.uk (hereinafter – the “Website”), which is owned and operated by VENENA MARKETING SERVICES - FZCO, a company duly incorporated and registered under the laws of England and Wales, with company number 72094, and its Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates, UAE (hereinafter – “VENENA”, “We”, “Us”, “Our”).
+                        You are on the website venenafzco.org (hereinafter – the “Website”), which is owned and operated by VENENA MARKETING SERVICES - FZCO, a company duly incorporated and registered under the laws of England and Wales, with company number 72094, and its Building A1, Dubai Digital Park, Dubai Silicon Oasis, Dubai, United Arab Emirates, UAE (hereinafter – “VENENA”, “We”, “Us”, “Our”).
                     </p>
                     <p>
                         These Terms of Use govern the relationship between Users and VENENA. Please read these Terms carefully before using the Website.
